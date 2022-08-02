@@ -1,62 +1,34 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# BookStore
 
-> Description the project.
-
+> A Bookstore app that adds and removes a user's book
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+- HTML, CSS, JS
 
-## Live Demo (if available)
-
-[Live Demo Link](https://livedemo.com)
-
-
-## Getting Started
-
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
-
-
-To get a local copy up and running follow these simple example steps.
-
-### Prerequisites
-
-### Setup
-
-### Install
-
-### Usage
-
-### Run tests
-
-### Deployment
-
-
+## [Live Demo Link](https://promzzykoncepts.github.io/BookStore/)
 
 ## Authors
 
-👤 **Author1**
+👤 **Promise Okechukwu**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@promzzykoncepts](https://github.com/promzzykoncepts)
+- Twitter: [@promzzy](https://twitter.com/promzzy)
+- LinkedIn: [Promise Okechukwu](https://linkedin.com/in/promiseokechukwu)
 
-👤 **Author2**
+👤 **Khan Bitsindou**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@Khanetmoi](https://github.com/Khanetmoi)
+- Twitter: [@InayatVan](https://twitter.com/InayatVan)
+- LinkedIn: [Khan Bitsindou](https://www.linkedin.com/in/khan-bitsindou-b37178228/)
 
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](../../issues/).
+Feel free to check the [issues page](github.com/promzzykoncepts/BookStore/issues/).
 
 ## Show your support
 
@@ -64,9 +36,7 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
+- MIcroverse for the UI template
 
 ## 📝 License
 
