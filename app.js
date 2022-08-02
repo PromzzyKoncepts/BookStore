@@ -40,25 +40,20 @@ class UserInterFace {
   static showBookList(book) {
     const bookLib = document.querySelector('.library');
     const bookDiv = document.createElement('div');
-    bookDiv.className = "book-container";
+    bookDiv.className = 'book-container';
 
     const titleDiv = document.createElement('h5');
     const authorDiv = document.createElement('h5');
-    const brTag = document.createElement('br');
     const removeBtn = document.createElement('button');
-    const hrTag = document.createElement('hr');
 
     titleDiv.innerText = `${book.title}`;
     authorDiv.innerText = `${book.author}`;
 
     const bookReferences = document.createElement('p');
-    bookReferences.innerText = `${book.title} by ${book.author}`
+    bookReferences.innerText = `${book.title} by ${book.author}`;
     removeBtn.innerText = 'Remove';
     removeBtn.className = 'btn';
 
-    
-    
-    
     removeBtn.addEventListener('click', () => {
       UserInterFace.deleteBook(removeBtn);
     });
@@ -66,11 +61,10 @@ class UserInterFace {
     bookDiv.appendChild(bookReferences);
 
     bookDiv.appendChild(removeBtn);
- 
-    bookLib.appendChild(bookDiv); 
+
+    bookLib.appendChild(bookDiv);
   }
 
-  
   static clearInput() {
     document.getElementById('author').value = '';
     document.getElementById('title').value = '';
@@ -79,9 +73,8 @@ class UserInterFace {
   // this is the function for the remove button
   static deleteBook(removeBtn) {
     const books = StoredBooks.getBook();
-    console.log(books)
-    const filteredBooks = books.filter((book) => book.title !== removeBtn.parentElement.firstElementChild.innerText);
-    console.log(filteredBooks);
+    const bookTitle = removeBtn.parentElement.firstElementChild.innerText;
+    const filteredBooks = books.filter((book) => book.title !== bookTitle.slice(0, bookTitle.indexOf('by') - 1));
     localStorage.setItem('books', JSON.stringify(filteredBooks));
     removeBtn.parentElement.remove();
   }
