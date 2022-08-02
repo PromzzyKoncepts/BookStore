@@ -7,12 +7,8 @@
 ## Built With
 
 - HTML, CSS, JS
-- Frameworks
-- Technologies used
 
-## Live Demo (if available)
-
-[Live Demo Link](https://livedemo.com)
+## [Live Demo Link](https://promzzykoncepts.github.io/BookStore/)
 
 ## Authors
 
@@ -22,7 +18,7 @@
 - Twitter: [@promzzy](https://twitter.com/promzzy)
 - LinkedIn: [Promise Okechukwu](https://linkedin.com/in/promiseokechukwu)
 
-👤 **Author2**
+👤 **Khan Bitsindou**
 
 - GitHub: [@Khanetmoi](https://github.com/Khanetmoi)
 - Twitter: [@InayatVan](https://twitter.com/InayatVan)
@@ -32,7 +28,7 @@
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](../../issues/).
+Feel free to check the [issues page](github.com/promzzykoncepts/BookStore/issues/).
 
 ## Show your support
 
