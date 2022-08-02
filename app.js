@@ -1,4 +1,5 @@
 /* eslint-disable  max-classes-per-file */
+/* eslint-disable  max-len */
 // Using Class Book represents a book and the various values used
 class Book {
   constructor(title, author) {
