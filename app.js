@@ -74,6 +74,7 @@ class UserInterFace {
 
   // this is the function for the remove button
   static deleteBook(removeBtn) {
+    const books = StoredBooks.getBook();
     const filteredBooks = books.filter((book) => book.title !== removeBtn.parentElement.firstElementChild.innerText);
     localStorage.setItem('books', JSON.stringify(filteredBooks));
     removeBtn.parentElement.remove();
