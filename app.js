@@ -7,8 +7,7 @@ class Book {
 }
 
 
-// call the books
-// document.addEventListener('load', UserInterFace.showBooks);
+// call the books and add them to the local storage
 class StoredBooks {
   
   static getBook() {
@@ -30,8 +29,8 @@ class StoredBooks {
 
 }
 
-// the User Interface class
 
+// the User Interface class that displays the books at the top
 let books;
 class UserInterFace {
   static showBooks() {
@@ -40,7 +39,7 @@ class UserInterFace {
       UserInterFace.showBookList(book);
     });
   }
-
+  // This is where i created the html elements dynamically
   static showBookList(book) {
     const bookLib = document.querySelector('.library');
     const bookDiv = document.createElement('div');
@@ -61,7 +60,7 @@ class UserInterFace {
 
     })
     
-
+    // Append all html elements to the parent element -bookLib
     bookDiv.appendChild(titleDiv)
     bookDiv.appendChild(authorDiv)
     bookDiv.appendChild(brTag)
@@ -72,24 +71,29 @@ class UserInterFace {
 
   }
 
+  //function to clear the input for new inputs
   static clearInput() {
     document.getElementById('author').value = '';
     document.getElementById('title').value = '';
   }
 
-
+  // this is the function for the remove button
   static deleteBook(removeBtn) {
     removeBtn.parentElement.remove();
-    books.forEach((book) => {
-      localStorage.removeItem('book')
+    
+    books.forEach((books, i) => {
+      // console.log(books.i, 'this is the array of book')
+      localStorage.removeItem(book);
     })
+
   }
 }
-
+// on loading or reloading browser, it restored the storedbooks
 window.addEventListener('load', (e) => {
   UserInterFace.showBooks()
 })
 
+// addeventlistener functions for the add button
 document.querySelector('#add').addEventListener('click', (e) => {
   e.preventDefault();
   const title = document.getElementById('title').value;
@@ -99,6 +103,7 @@ document.querySelector('#add').addEventListener('click', (e) => {
   UserInterFace.showBookList(book);
   UserInterFace.clearInput();
 });
+
 
 
 
