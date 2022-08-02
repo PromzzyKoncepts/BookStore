@@ -40,6 +40,8 @@ class UserInterFace {
   static showBookList(book) {
     const bookLib = document.querySelector('.library');
     const bookDiv = document.createElement('div');
+    bookDiv.className = "book-container";
+
     const titleDiv = document.createElement('h5');
     const authorDiv = document.createElement('h5');
     const brTag = document.createElement('br');
@@ -48,8 +50,15 @@ class UserInterFace {
 
     titleDiv.innerText = `${book.title}`;
     authorDiv.innerText = `${book.author}`;
+
+    const bookReferences = document.createElement('p');
+    bookReferences.innerText = `${book.title} by ${book.author}`
     removeBtn.innerText = 'Remove';
     removeBtn.className = 'btn';
+
+    
+    
+    // for(let i = 0; i< )
 
     // add event listener to the remove button
     removeBtn.addEventListener('click', () => {
@@ -57,12 +66,13 @@ class UserInterFace {
     });
 
     // Append all html elements to the parent element -bookLib
-    bookDiv.appendChild(titleDiv);
-    bookDiv.appendChild(authorDiv);
-    bookDiv.appendChild(brTag);
+    // bookDiv.appendChild(titleDiv);
+    // bookDiv.appendChild(authorDiv);
+    bookDiv.appendChild(bookReferences);
+    // bookDiv.appendChild(brTag);
     bookDiv.appendChild(removeBtn);
-    bookDiv.appendChild(hrTag);
-    bookLib.appendChild(bookDiv);
+    // bookDiv.appendChild(hrTag);
+    bookLib.appendChild(bookDiv); 
   }
 
   // function to clear the input for new inputs
