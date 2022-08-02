@@ -1,3 +1,4 @@
+/* eslint-disable  max-classes-per-file */
 // Using Class Book represents a book and the various values used
 class Book {
   constructor(title, author) {
@@ -6,10 +7,8 @@ class Book {
   }
 }
 
-
 // call the books and add them to the local storage
 class StoredBooks {
-  
   static getBook() {
     let books;
     if (localStorage.getItem('books') === null) {
@@ -19,16 +18,13 @@ class StoredBooks {
     }
     return books;
   }
-  
+
   static addBook(book) {
     const books = StoredBooks.getBook();
     books.push(book);
     localStorage.setItem('books', JSON.stringify(books));
   }
-
-
 }
-
 
 // the User Interface class that displays the books at the top
 let books;
@@ -39,39 +35,37 @@ class UserInterFace {
       UserInterFace.showBookList(book);
     });
   }
+
   // This is where i created the html elements dynamically
   static showBookList(book) {
     const bookLib = document.querySelector('.library');
     const bookDiv = document.createElement('div');
-    const titleDiv = document.createElement('h5')
-    const authorDiv = document.createElement('h5')
-    const brTag = document.createElement('br')
-    const removeBtn = document.createElement('button')
-    const hrTag = document.createElement('hr')
+    const titleDiv = document.createElement('h5');
+    const authorDiv = document.createElement('h5');
+    const brTag = document.createElement('br');
+    const removeBtn = document.createElement('button');
+    const hrTag = document.createElement('hr');
 
     titleDiv.innerText = `${book.title}`;
     authorDiv.innerText = `${book.author}`;
-    removeBtn.innerText = "Remove"
-    removeBtn.className = "btn"
+    removeBtn.innerText = 'Remove';
+    removeBtn.className = 'btn';
 
-    //add event listener to the remove button
-    removeBtn.addEventListener('click', (e) => {
+    // add event listener to the remove button
+    removeBtn.addEventListener('click', () => {
       UserInterFace.deleteBook(removeBtn);
+    });
 
-    })
-    
     // Append all html elements to the parent element -bookLib
-    bookDiv.appendChild(titleDiv)
-    bookDiv.appendChild(authorDiv)
-    bookDiv.appendChild(brTag)
-    bookDiv.appendChild(removeBtn)
-    bookDiv.appendChild(hrTag)
-    bookLib.appendChild(bookDiv)
-
-
+    bookDiv.appendChild(titleDiv);
+    bookDiv.appendChild(authorDiv);
+    bookDiv.appendChild(brTag);
+    bookDiv.appendChild(removeBtn);
+    bookDiv.appendChild(hrTag);
+    bookLib.appendChild(bookDiv);
   }
 
-  //function to clear the input for new inputs
+  // function to clear the input for new inputs
   static clearInput() {
     document.getElementById('author').value = '';
     document.getElementById('title').value = '';
@@ -80,18 +74,12 @@ class UserInterFace {
   // this is the function for the remove button
   static deleteBook(removeBtn) {
     removeBtn.parentElement.remove();
-    
-    books.forEach((books, i) => {
-      // console.log(books.i, 'this is the array of book')
-      localStorage.removeItem(book);
-    })
-
   }
 }
 // on loading or reloading browser, it restored the storedbooks
-window.addEventListener('load', (e) => {
-  UserInterFace.showBooks()
-})
+window.addEventListener('load', () => {
+  UserInterFace.showBooks();
+});
 
 // addeventlistener functions for the add button
 document.querySelector('#add').addEventListener('click', (e) => {
@@ -103,8 +91,3 @@ document.querySelector('#add').addEventListener('click', (e) => {
   UserInterFace.showBookList(book);
   UserInterFace.clearInput();
 });
-
-
-
-
-
