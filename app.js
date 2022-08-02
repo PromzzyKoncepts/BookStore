@@ -58,24 +58,19 @@ class UserInterFace {
 
     
     
-    // for(let i = 0; i< )
-
-    // add event listener to the remove button
+    
     removeBtn.addEventListener('click', () => {
       UserInterFace.deleteBook(removeBtn);
     });
 
-    // Append all html elements to the parent element -bookLib
-    // bookDiv.appendChild(titleDiv);
-    // bookDiv.appendChild(authorDiv);
     bookDiv.appendChild(bookReferences);
-    // bookDiv.appendChild(brTag);
+
     bookDiv.appendChild(removeBtn);
-    // bookDiv.appendChild(hrTag);
+ 
     bookLib.appendChild(bookDiv); 
   }
 
-  // function to clear the input for new inputs
+  
   static clearInput() {
     document.getElementById('author').value = '';
     document.getElementById('title').value = '';
@@ -83,6 +78,11 @@ class UserInterFace {
 
   // this is the function for the remove button
   static deleteBook(removeBtn) {
+    const books = StoredBooks.getBook();
+    console.log(books)
+    const filteredBooks = books.filter((book) => book.title !== removeBtn.parentElement.firstElementChild.innerText);
+    console.log(filteredBooks);
+    localStorage.setItem('books', JSON.stringify(filteredBooks));
     removeBtn.parentElement.remove();
   }
 }
