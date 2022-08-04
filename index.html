@@ -12,35 +12,35 @@
   </head>
   <body>
     <header>
-      <h3>Awesome Books</h3>
+      <h3><span>Awesome</span> Books</h3>
       <nav>
-        <ul>
+        <ul class="navbar">
           <li>
-            <a href="#listBook" id="showList">List</a>
-            <a href="#form" id="showForm">Add New</a>
-            <a href="#contact" id="showContact">Contact</a>
+            <a href="#listBook" class="nav-item" id="showList"  onclick="changeLinkColor(0)">List <small id="showListNum"></small></a>
+            <a href="#form" class="nav-item" id="showForm" onclick="changeLinkColor(1)">Add New</a>
+            <a href="#contact" class="nav-item" id="showContact" onclick="changeLinkColor(2)">Contact</a>
           </li>
         </ul>
       </nav>
     </header>
 
-    <section class="date">
-      <p>March 21st 2022</p>
-    </section>
+    <div class="date">
+    </div>
 
     <section id="listBook" class="wrapper">
       <h1> All Awesome Books</h1>
-      <section class="library"></section>
+      <div class="library"></div>
       <section class="formElement">
-      <hr>
-      <h2 id="BTitle">Add new book</h2>
-      <form id="form">
-        <input type="text" name="title" id="title" placeholder="Title"> 
-        <br> <br>
-        <input type="text" name="author" id="author" placeholder="Author"> 
-        <br> <br>
-        <button type="button" id="add">Add</button>
-      </form>
+        <hr>
+        <h2 id="BTitle">Add New Book</h2>
+        <div id="display-msg"></div>
+        <form id="form">
+          <input type="text" name="title" id="title" placeholder="Title" required> 
+          
+          <input type="text" name="author" id="author" placeholder="Author" required>
+          
+          <button type="button" id="add">Add</button>
+        </form>
       </section>
     </section>
 
@@ -56,7 +56,7 @@
     </section>
 
     <footer>
-      <h5>Awesome Books</h5>
+      <h5><span>Awesome</span> Books</h5>
       <p>Copyright &copy; 2022 All Rights Reserved </p>
     </footer>
     <script src="app.js"></script>
