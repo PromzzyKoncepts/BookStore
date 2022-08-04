@@ -82,6 +82,11 @@ class UserInterFace {
 // on loading or reloading browser, it restored the storedbooks
 window.addEventListener('load', () => {
   UserInterFace.showBooks();
+  document.getElementsByClassName('library')[0].style.display = 'none';
+  document.getElementById('form').style.display = 'flex';
+  document.getElementById('contact').style.display = 'none';
+  document.getElementsByClassName('formElement')[0].style.display = 'flex';
+  document.getElementsByTagName('h1')[0].style.display = 'none';
 });
 
 // addeventlistener functions for the add button
@@ -94,3 +99,31 @@ document.querySelector('#add').addEventListener('click', (e) => {
   UserInterFace.showBookList(book);
   UserInterFace.clearInput();
 });
+
+const showContact = document.getElementById('showContact');
+const showForm = document.getElementById('showForm');
+const showBooks = document.getElementById('showList');
+
+showContact.addEventListener('click', () => {
+  document.getElementsByClassName('library')[0].style.display = 'none';
+  document.getElementById('contact').style.display = 'flex';
+  document.getElementsByClassName('formElement')[0].style.display = 'none';
+  document.getElementsByTagName('h1')[0].style.display = 'none';
+});
+
+showForm.addEventListener('click', () => {
+  document.getElementsByClassName('library')[0].style.display = 'none';
+  document.getElementById('form').style.display = 'flex';
+  document.getElementById('contact').style.display = 'none';
+  document.getElementsByClassName('formElement')[0].style.display = 'flex';
+  document.getElementsByTagName('h1')[0].style.display = 'none';
+});
+
+showBooks.addEventListener('click', () => {
+  document.getElementsByClassName('library')[0].style.display = 'block';
+  document.getElementById('contact').style.display = 'none';
+  document.getElementsByClassName('formElement')[0].style.display = 'none';
+});
+
+const date = document.getElementsByClassName('date')[0];
+date.innerText = `${new Date().getDate()} /${new Date().getMonth()} /${new Date().getFullYear()}`;

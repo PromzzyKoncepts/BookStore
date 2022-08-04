@@ -16,9 +16,9 @@
       <nav>
         <ul>
           <li>
-            <a href="#listBook">List</a>
-            <a href="#form">Add New</a>
-            <a href="#contact">Contact</a>
+            <a href="#listBook" id="showList">List</a>
+            <a href="#form" id="showForm">Add New</a>
+            <a href="#contact" id="showContact">Contact</a>
           </li>
         </ul>
       </nav>
@@ -31,9 +31,9 @@
     <section id="listBook" class="wrapper">
       <h1> All Awesome Books</h1>
       <section class="library"></section>
-      <div class="formElement">
+      <section class="formElement">
       <hr>
-      <h2>Add new book</h2>
+      <h2 id="BTitle">Add new book</h2>
       <form id="form">
         <input type="text" name="title" id="title" placeholder="Title"> 
         <br> <br>
@@ -41,7 +41,7 @@
         <br> <br>
         <button type="button" id="add">Add</button>
       </form>
-      </div>
+      </section>
     </section>
 
     <section id="contact">
