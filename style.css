@@ -1,16 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Crete+Round&family=Inter:wght@400;500;600;700;800&family=Poppins&family=Roboto:wght@700&display=swap');
+
 body {
   padding: 0;
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Inter', sans-serif;
 }
 
 .book-container {
   display: flex;
   justify-content: space-between;
+  padding-left: 15px;
 }
 
 .library > div:nth-child(odd) {
   background-color: gray;
+  color: #fff;
 }
 
 .btn {
@@ -30,8 +34,83 @@ hr {
 
 h1 {
   text-align: center;
+  margin-top: 10px;
 }
 
 #add {
   float: right;
+  padding: 4px 10px;
+}
+
+/* styles for the header */
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #fafafa;
+  box-shadow: 0 0 10px rgb(118, 118, 118);
+  padding: 0 20px;
+}
+
+li {
+  list-style: none;
+}
+
+li a {
+  color: #282828;
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+a:hover {
+  color: brown;
+}
+
+/* styles for the contact */
+#contact {
+  color: #282828;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.contact-icons a {
+  color: #282828;
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.contact-icons a:hover {
+  color: brown;
+}
+
+/* styles for the footer */
+footer {
+  display: flex;
+  flex-direction: row;
+  padding: 0 20px;
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
+  box-shadow: 0 0 10px #afafaf;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+/* styles for the date and time section */
+.date {
+  /* float: right; */
+  padding: 20px;
+
+  /* position: absolute; */
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
 }
