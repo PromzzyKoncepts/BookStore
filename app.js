@@ -24,6 +24,12 @@ class StoredBooks {
     books.push(book);
     localStorage.setItem('books', JSON.stringify(books));
   }
+
+  // this part counts the numbber of books present from the local storage
+  static bookNumber() {
+    const books = JSON.parse(localStorage.getItem('books')) || [];
+    return books.length;
+  }
 }
 
 // the User Interface class that displays the books at the top
@@ -41,28 +47,22 @@ class UserInterFace {
     const bookLib = document.querySelector('.library');
     const bookDiv = document.createElement('div');
     bookDiv.className = 'book-container';
-
     const titleDiv = document.createElement('h5');
     const authorDiv = document.createElement('h5');
     const removeBtn = document.createElement('button');
 
     titleDiv.innerText = `${book.title}`;
     authorDiv.innerText = `${book.author}`;
-
     const bookReferences = document.createElement('p');
     bookReferences.innerText = `${book.title} by ${book.author}`;
     removeBtn.innerText = 'Remove';
     removeBtn.className = 'btn';
-
+    bookDiv.appendChild(bookReferences);
+    bookDiv.appendChild(removeBtn);
+    bookLib.appendChild(bookDiv);
     removeBtn.addEventListener('click', () => {
       UserInterFace.deleteBook(removeBtn);
     });
-
-    bookDiv.appendChild(bookReferences);
-
-    bookDiv.appendChild(removeBtn);
-
-    bookLib.appendChild(bookDiv);
   }
 
   static clearInput() {
@@ -94,10 +94,24 @@ document.querySelector('#add').addEventListener('click', (e) => {
   e.preventDefault();
   const title = document.getElementById('title').value;
   const author = document.getElementById('author').value;
-  const book = new Book(title, author);
-  StoredBooks.addBook(book);
-  UserInterFace.showBookList(book);
-  UserInterFace.clearInput();
+  const bookAddedMsg = document.getElementById('display-msg');
+  const message = document.createElement('p');
+  message.className = 'message';
+  bookAddedMsg.appendChild(message);
+  if (!title || !author) {
+    message.innerText = 'Title and author cannot be empty';
+    message.classList = 'error';
+  } else {
+    const book = new Book(title, author);
+    StoredBooks.addBook(book);
+    UserInterFace.showBookList(book);
+    UserInterFace.clearInput();
+    message.innerText = 'Great! Your book was successfully added!!';
+  }
+  setTimeout(() => {
+    message.textContent = '';
+    message.style.display = 'none';
+  }, 3000);
 });
 
 const showContact = document.getElementById('showContact');
@@ -125,5 +139,15 @@ showBooks.addEventListener('click', () => {
   document.getElementsByClassName('formElement')[0].style.display = 'none';
 });
 
+function changeLinkColor(index) {
+  const navItems = document.querySelectorAll('.nav-item');
+  Array.from(navItems).forEach((item, ind) => (ind === index ? item.classList.toggle('clicked-link') : item.classList.remove('clicked-link')));
+}
+changeLinkColor();
+
+const listNum = document.getElementById('showListNum');
+listNum.className = 'list';
+listNum.innerText = `${StoredBooks.bookNumber()}`;
+
 const date = document.getElementsByClassName('date')[0];
-date.innerText = `${new Date().getDate()} /${new Date().getMonth()} /${new Date().getFullYear()}`;
+date.innerText = ` Date: ${new Date().getDate()} | ${new Date().getMonth()} | ${new Date().getFullYear()}`;
