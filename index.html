@@ -16,9 +16,9 @@
       <nav>
         <ul>
           <li>
-            <a href="#listBook">List</a>
-            <a href="#form">Add New</a>
-            <a href="#contact">Contact</a>
+            <a href="#listBook" id="showList">List</a>
+            <a href="#form" id="showForm">Add New</a>
+            <a href="#contact" id="showContact">Contact</a>
           </li>
         </ul>
       </nav>
@@ -31,9 +31,9 @@
     <section id="listBook" class="wrapper">
       <h1> All Awesome Books</h1>
       <section class="library"></section>
-      <div class="formElement">
+      <section class="formElement">
       <hr>
-      <h2>Add new book</h2>
+      <h2 id="BTitle">Add new book</h2>
       <form id="form">
         <input type="text" name="title" id="title" placeholder="Title"> 
         <br> <br>
@@ -41,7 +41,7 @@
         <br> <br>
         <button type="button" id="add">Add</button>
       </form>
-      </div>
+      </section>
     </section>
 
     <section id="contact">
@@ -49,7 +49,7 @@
       <p>Got any questions? or would love to drop a message/feedback? <br>You can reach out to us:</p>
       <ul class="contact-icons">
         <li><a href="awesomebooks@gmail.com"><i class="fa fa-envelope" aria-hidden="true"></i>awesomebooks@gmail.com</a></li>
-        <li><a href="+234 7012897856"><i class="fa fa-phone-square" aria-hidden="true"></i>+2347012897856</a></li>
+        <li><a href="+2347012897856"><i class="fa fa-phone-square" aria-hidden="true"></i>+2347012897856</a></li>
         <li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i>52 Bricks Road, Texas, USA</a></li>
       </ul>
       
@@ -57,7 +57,7 @@
 
     <footer>
       <h5>Awesome Books</h5>
-      <p>Copyright &copy 2022 All Rights Reserved </p>
+      <p>Copyright &copy; 2022 All Rights Reserved </p>
     </footer>
     <script src="app.js"></script>
   </body>
